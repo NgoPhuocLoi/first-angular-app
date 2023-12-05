@@ -1,2 +1,25 @@
-<h1>Server component</h1>
-<app-custom-button></app-custom-button>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- <input
+        type="text"
+        class="form-control w-full"
+        (input)="onServerNameChange($event)"
+      /> -->
+
+      <input type="text" [(ngModel)]="serverName" />
+      <p>{{ serverName }}</p>
+      <h1>Server Id is {{ serverId }}</h1>
+      <p>Server status : {{ serverStatus }}</p>
+      <p>{{ serverCreationStatus }}</p>
+
+      <button
+        [disabled]="!allowNewServer"
+        class="btn btn-primary"
+        (click)="onServerCreate()"
+      >
+        Add server
+      </button>
+    </div>
+  </div>
+</div>
