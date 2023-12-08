@@ -19,7 +19,7 @@
   <ul class="list-group">
     @for(server of servers; track server.name){
     <app-server-item [server]="server" [name]="server.name">
-      <p #paragraph>{{ server.content }}</p>
+      <p appBasicHighlight #paragraph>{{ server.content }}</p>
     </app-server-item>
     }
   </ul>

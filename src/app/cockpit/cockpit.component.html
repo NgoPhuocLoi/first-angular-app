@@ -23,7 +23,28 @@
     </div>
 
     <div class="row mt-3">
-      <div class="p">Server name input ref: {{ serverNameInput.value }}</div>
+      <div betterHighlight="red" class="p">
+        Server name input ref: {{ serverNameInput.value }}
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div *appUnless="condition">
+        This text will be displayed if the condition is false
+      </div>
+      <div class="col-xs-12">
+        <button class="btn btn-primary" (click)="condition = !condition">
+          Toggle condition
+        </button>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div [ngSwitch]="serverNameInput.value.length">
+        <p *ngSwitchCase="0">The server name is empty</p>
+        <p *ngSwitchCase="10">The server name is quite long</p>
+        <p *ngSwitchCase="20">The server name is so long</p>
+      </div>
     </div>
 
     <div class="d-flex mt-3 gap-3">

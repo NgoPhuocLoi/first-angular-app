@@ -16,6 +16,7 @@ export class CockpitComponent {
   @Output() onServerAdded = new EventEmitter<Server>();
   name: string = '';
   content: string = '';
+  condition = false;
   @ViewChild('serverContentInput') serverContentInput: ElementRef;
 
   onAddServer(event: Event) {
