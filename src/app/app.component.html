@@ -8,7 +8,17 @@
   <hr />
   <ul class="list-group">
     @for(server of servers; track server.name){
-    <app-server-item [server]="server"></app-server-item>
+    <app-server-item [server]="server">
+      <div
+        class="fw-bold server-name"
+        [ngStyle]="{
+          color: server.type === 'server' ? 'red' : 'blue'
+        }"
+      >
+        {{ server.name }}
+      </div>
+      {{ server.content }}
+    </app-server-item>
     }
   </ul>
 </div>
