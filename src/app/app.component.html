@@ -1,4 +1,14 @@
-<input type="text" [(ngModel)]="name" />
-<h2 class="text-center">{{ name }}</h2>
+<div class="container">
+  <div class="row mt-3">
+    <h2 class="text-center">Add new servers or blueprints</h2>
+  </div>
 
-<app-servers></app-servers>
+  <app-cockpit (onServerAdded)="onServerAdded($event)"></app-cockpit>
+
+  <hr />
+  <ul class="list-group">
+    @for(server of servers; track server.name){
+    <app-server-item [server]="server"></app-server-item>
+    }
+  </ul>
+</div>

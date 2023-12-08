@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ServerComponent } from './server/server.component';
+import Server from './shared/server.model';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,10 @@ import { ServerComponent } from './server/server.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'my-first-app';
-  name = 'My name';
+  servers: Server[] = [new Server('Server 1', 'server', 'Content of server 1')];
+
+  onServerAdded(serverData: Server) {
+    console.log(serverData);
+    this.servers.push(serverData);
+  }
 }
