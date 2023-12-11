@@ -12,7 +12,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import Server from '../shared/server.model';
+import Server from '../../shared/server.model';
 
 @Component({
   selector: 'app-server-item',
