@@ -10,10 +10,11 @@ import { BetterHighlight } from './directives/better-hightlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './users/user/user.component';
 import { ServersComponent } from './servers/servers.component';
 import { RouterModule } from '@angular/router';
 import routes from './app.router';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import routes from './app.router';
     HomeComponent,
     UserComponent,
     ServersComponent,
+    UsersComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
   providers: [],
