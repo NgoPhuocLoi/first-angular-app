@@ -4,6 +4,9 @@ import { ServersComponent } from './servers/servers.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { canActivateFn } from './app-guard.service';
+import { canDeactiveFn } from './can-deactive.guard';
+import { userResolver } from './users/user/user.resolver';
 
 const routes: Routes = [
   {
@@ -13,6 +16,7 @@ const routes: Routes = [
   {
     path: 'servers',
     component: ServersComponent,
+    canActivate: [canActivateFn],
   },
   {
     path: 'users',
@@ -21,8 +25,12 @@ const routes: Routes = [
       {
         path: ':id',
         component: UserComponent,
+        resolve: {
+          user: userResolver,
+        },
       },
     ],
+    canDeactivate: [canDeactiveFn],
   },
   {
     path: 'not-found',
