@@ -15,6 +15,7 @@ import { ServersComponent } from './servers/servers.component';
 import { RouterModule } from '@angular/router';
 import routes from './app.router';
 import { UsersComponent } from './users/users.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UsersComponent } from './users/users.component';
     UserComponent,
     ServersComponent,
     UsersComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
   providers: [],
