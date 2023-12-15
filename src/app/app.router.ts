@@ -7,6 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { canActivateFn } from './app-guard.service';
 import { canDeactiveFn } from './can-deactive.guard';
 import { userResolver } from './users/user/user.resolver';
+import { UserFormComponent } from './users/user-form/user-form.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: 'servers',
     component: ServersComponent,
     // canActivate: [canActivateFn],
+  },
+  {
+    path: 'users/new',
+    component: UserFormComponent,
   },
   {
     path: 'users',

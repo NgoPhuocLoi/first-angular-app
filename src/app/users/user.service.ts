@@ -1,22 +1,14 @@
 import { Injectable } from '@angular/core';
+import User from './user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export default class UserService {
-  users = [
-    {
-      id: 1,
-      name: 'Max',
-    },
-    {
-      id: 2,
-      name: 'Alice',
-    },
-    {
-      id: 3,
-      name: 'Hanibal',
-    },
+  users: User[] = [
+    new User(1, 'Max', 'max@gmail.com'),
+    new User(2, 'Alice', 'alice@gmail.com'),
+    new User(3, 'Hanibal', 'hanibal@gmail.com'),
   ];
 
   getUserById(id: number) {
