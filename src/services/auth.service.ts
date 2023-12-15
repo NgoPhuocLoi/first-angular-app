@@ -1,25 +1,27 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export default class AuthService {
-  loggedIn = false;
+  private logginSubject = new Subject<boolean>();
+
+  logginState = this.logginSubject.asObservable();
 
   login() {
-    this.loggedIn = true;
-    console.log(this.loggedIn + 'h ehe');
+    this.logginSubject.next(true);
   }
 
   logout() {
-    this.loggedIn = false;
+    this.logginSubject.next(false);
   }
 
-  isAuthenticated() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(this.loggedIn);
-      }, 1000);
-    });
-  }
+  // isAuthenticated() {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve(this.loggedIn);
+  //     }, 1000);
+  //   });
+  // }
 }

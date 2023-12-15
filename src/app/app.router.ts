@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path: 'servers',
     component: ServersComponent,
-    canActivate: [canActivateFn],
+    // canActivate: [canActivateFn],
   },
   {
     path: 'users',

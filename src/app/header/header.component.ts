@@ -7,17 +7,21 @@ import { Observable, of } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {
-  loggedIn: boolean = true;
+export class HeaderComponent implements OnInit {
+  loggedIn: boolean;
   authService = inject(AuthService);
 
+  ngOnInit(): void {
+    this.authService.logginState.subscribe((loggedIn) => {
+      this.loggedIn = loggedIn;
+    });
+  }
+
   onLogin() {
-    this.loggedIn = true;
     this.authService.login();
   }
 
   onLogout() {
-    this.loggedIn = false;
     this.authService.logout();
   }
 }
