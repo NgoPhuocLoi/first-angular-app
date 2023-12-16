@@ -8,6 +8,7 @@ import { canActivateFn } from './app-guard.service';
 import { canDeactiveFn } from './can-deactive.guard';
 import { userResolver } from './users/user/user.resolver';
 import { UserFormComponent } from './users/user-form/user-form.component';
+import { UserFormReactiveComponent } from './users/user-form-reactive/user-form-reactive.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'users/new',
     component: UserFormComponent,
+  },
+  {
+    path: 'users/new-reactive',
+    component: UserFormReactiveComponent,
   },
   {
     path: 'users',
