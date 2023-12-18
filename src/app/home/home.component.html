@@ -7,3 +7,14 @@
 <button class="btn btn-primary" (click)="onNavigate()">
   Programmatically navigate to the servers
 </button>
+
+<hr />
+<h4>Account list:</h4>
+<ul>
+  @for(account of accounts; track account.username){
+  <li>
+    {{ account.username | shorten : 5 | uppercase }} |
+    {{ account.lastLogin | date : "full" : "vi" | uppercase }}
+  </li>
+  }
+</ul>

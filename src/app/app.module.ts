@@ -18,6 +18,7 @@ import { UsersComponent } from './users/users.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserFormReactiveComponent } from './users/user-form-reactive/user-form-reactive.component';
+import { ShortenPipe } from './shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { UserFormReactiveComponent } from './users/user-form-reactive/user-form-
     NotFoundComponent,
     UserFormComponent,
     UserFormReactiveComponent,
+    ShortenPipe,
   ],
   imports: [
     BrowserModule,

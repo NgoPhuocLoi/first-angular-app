@@ -13,6 +13,21 @@ export class HomeComponent implements OnInit, OnDestroy {
   private authService = inject(AuthService);
   loggedIn: boolean;
 
+  accounts = [
+    {
+      username: 'account1',
+      lastLogin: new Date(),
+    },
+    {
+      username: 'account2',
+      lastLogin: new Date(),
+    },
+    {
+      username: 'accccccccount3',
+      lastLogin: new Date(),
+    },
+  ];
+
   constructor(private router: Router) {}
   onNavigate() {
     this.router.navigate(['/servers']);
