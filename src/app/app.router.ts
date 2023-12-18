@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ServersComponent } from './servers/servers.component';
-import { UsersComponent } from './users/users.component';
-import { UserComponent } from './users/user/user.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { canActivateFn } from './app-guard.service';
 import { canDeactiveFn } from './can-deactive.guard';
-import { userResolver } from './users/user/user.resolver';
-import { UserFormComponent } from './users/user-form/user-form.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PostsComponent } from './posts/posts.component';
+import { ServersComponent } from './servers/servers.component';
 import { UserFormReactiveComponent } from './users/user-form-reactive/user-form-reactive.component';
+import { UserFormComponent } from './users/user-form/user-form.component';
+import { UserComponent } from './users/user/user.component';
+import { userResolver } from './users/user/user.resolver';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
@@ -41,6 +41,10 @@ const routes: Routes = [
       },
     ],
     canDeactivate: [canDeactiveFn],
+  },
+  {
+    path: 'posts',
+    component: PostsComponent,
   },
   {
     path: 'not-found',
