@@ -32,4 +32,10 @@ export class PostsComponent implements OnInit {
       this.isFetching = false;
     });
   }
+
+  onClearPosts() {
+    this.postService.deletePosts().subscribe(() => {
+      this.posts = [];
+    });
+  }
 }

@@ -34,7 +34,7 @@
   <div>
     <button class="btn btn-primary me-2" (click)="onFetchPosts()">
       Fetch posts</button
-    ><button class="btn btn-danger">Clear post</button>
+    ><button class="btn btn-danger" (click)="onClearPosts()">Clear post</button>
   </div>
 
   @if(isFetching){
