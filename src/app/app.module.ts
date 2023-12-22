@@ -21,6 +21,7 @@ import { UserFormReactiveComponent } from './users/user-form-reactive/user-form-
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserComponent } from './users/user/user.component';
 import { UsersComponent } from './users/users.component';
+import { httpInterceptorProviders } from './http-interceptors';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { UsersComponent } from './users/users.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
